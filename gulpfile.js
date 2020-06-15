@@ -39,11 +39,14 @@ gulp.task('sass', function() {
 });
 
 // Пользовательские скрипты проекта
+//здесь я поключаю mmenu - без него файл не будет открываться
+//здесь я подключаю owlcarousel
 
 gulp.task('js', function() {
 	return gulp.src([
 		'app/libs/jquery/dist/jquery.min.js',
 		'app/libs/mmenu/js/jquery.mmenu.all.min.js',
+		'app/libs/owl.carousel/owl.carousel.min.js',
 		'app/js/common.js', // Всегда в конце
 		])
 	.pipe(concat('scripts.min.js'))

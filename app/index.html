@@ -33,10 +33,13 @@
 <div id="my-page">
 
 	<div id="my-header">
+
+		<!--Верстаем верхнюю линию - шапку-->
+
 		<header class="site-header" style="background-image: url(img/top-bg.jpg)">
 			<div class="top-line">
 				<a href="#" class="logo"><img src="img/logo-1.svg" alt="Салон красоты Смитлер"> </a>
-				<div class="phone"><i class="fa fa-mobile"></i>+7(495)118-94-35</div>
+				<div class="phone hidden-xs"><i class="fa fa-mobile"></i>+7(495)118-94-35</div><!--phone - маленький - его взял из библиотеки fantawesome - icons - подключено в libs.scss-->  <!--hidden-xs  - bootstrap  скрывает на самых маленьких экранах-->
 				<a href="#my-menu" class="hamburger hamburger--emphatic">
 					<span class="hamburger-box"><span class="hamburger-inner"></span></span>
 				</a>
@@ -57,10 +60,149 @@
 					</ul>
 				</nav>
 			</div>
+
+
+<!--			верстаем Салон Красоты - центральный блок в шапке-->
+
+			<div class="header-flex">
+				<div class="flex-center">
+
+					<div class="container">  <!--bootstrap-->
+						<div class="row">
+							<div class="col-sm-7 col-xs-10"> <!--это класс размера сетки из bootstrap   col-xs-10 - на ширине 767 - делает меньше-->
+
+								<div class="header-composition">
+
+									<div class="welcome">
+										<p><span>Добро подаловать в профессиональный</span></p>
+										<h1 class="h1">Салон красоты</h1>
+										<strong><i class="fa fa-star"></i>в Москве<i class="fa fa-star"></i></strong><!--hone - маленький - его взял из библиотеки fantawesome - icons - подключено в libs.scss-->
+									</div>
+
+									<p><strong>S&Milter</strong>- это салон красоты бизнес-класса. Мастера салона дарят
+									посетителям уверенность в себе и индивидуальный стиль. Здесь
+									представлены все самые востребованные услуги бьюти-индустрии</p>
+
+									<a class="button">О салоне</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--верстаем боковую панель шапки - fa - с использованием fontawesome-->
+
+			<div class="header-social">
+				<nav class="soc">
+					<ul>
+						<li><a href="#"><i class="fa fa-facebook"></i> </a> </li> <!--<i class="fa"></i>   - это fantawesome-->
+						<li><a href="#"><i class="fa fa-instagram"></i> </a> </li>
+						<li><a href="#"><i class="fa fa-vk"></i> </a> </li>
+					</ul>
+				</nav>
+			</div>
+
+			<!--верстаем нижнюю часть шапки с использованием bootstrap сетку-->
+
+			<div class="header-contacts">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-4 col-sm-6"> <!--col-sm-6 - горит нам что контент будет разеделн на две колонки-->
+							<i class="fa fa-location-arrow"></i>г. Москва, ул. Ивана Бабушкина, 22с1    <!--все названия иконок fontawesome можно посмотреть на сайте fontawesome-->
+						</div>
+
+						<div class="col-md-4 col-sm-6">
+							<div class="phone-h"> <!--этот див сделан для того чтобы телефон в центре центрировался-->
+								<i class="fa fa-mobile"></i>+7 (495) 922-77-73
+							</div>
+						</div>
+
+						<div class="col-md-4 hidden-sm hidden-xs"> <!--hidden-xs - скрыто классом bootstrap , если только этот класс оставить то на ультра маленьких экранах снова появится - время работы - поэтому нужен еще один класс hidden-sm -->
+							<i class="fa fa-clock-o"></i>Время работы: ежедневно: 10:00 - 22:00
+						</div>
+					</div>
+				</div>
+			</div>
 		</header>
 	</div>
 
 	<div id="my-content">
+<!--		=========здесь начинаю верстать карусель - как я ее подключил: 1. перенс в папку плагин 2. в libs - прописал путь 3. в галп подключил все 4. поключил все в common.js-->
+
+		<section class="s-services"> <!-- =====- карусель-->
+			<div class="owl-carousel carousel-services"> <!--этот класс здесь из owl.carousel--> <!--кстати здесь не нужно использовать bootstrap сетку-->
+
+				<div class="carousel-services-item">
+					<div class="carousel-services-content">
+						<div class="carousel-services-compositions">
+							<div class="carousel-logo"><img src="img/logo-2.svg" alt="Смитлер Салон красоты"> </div>
+
+							<h3 class="h3">Косметологический сервис</h3>
+							<ul class="carousel-services-list">
+								<li>Ключевая услуга #1 <strong>8500 <i class="fa fa-rub"></i></strong></li> <!--<i class="fa fa-rub"> - это его взял из библиотеки fantawesome - icons --->
+								<li>Ключевая услуга #2 <strong>8500 <i class="fa fa-rub"></i></strong></li>
+								<li>Ключевая услуга #3 <strong>8500 <i class="fa fa-rub"></i></strong></li>
+							</ul>
+							<a href="#" class="button button-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services-image" style="background-image: url(img/service.png)"></div>
+				</div>
+
+				<div class="carousel-services-item">
+					<div class="carousel-services-content">
+						<div class="carousel-services-compositions">
+							<div class="carousel-logo"><img src="img/logo-2.svg" alt="Смитлер Салон красоты"> </div>
+
+							<h3 class="h3">Парикмахерский сервис</h3>
+							<ul class="carousel-services-list">
+								<li>Ключевая услуга #1 <strong>3600 <i class="fa fa-rub"></i></strong></li> <!--<i class="fa fa-rub"> - это его взял из библиотеки fantawesome - icons --->
+								<li>Ключевая услуга #2 <strong>9800 <i class="fa fa-rub"></i></strong></li>
+								<li>Ключевая услуга #3 <strong>8500 <i class="fa fa-rub"></i></strong></li>
+							</ul>
+							<a href="#" class="button button-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services-image" style="background-image: url(img/service2.png)"></div>
+				</div>
+
+				<div class="carousel-services-item">
+					<div class="carousel-services-content">
+						<div class="carousel-services-compositions">
+							<div class="carousel-logo"><img src="img/logo-2.svg" alt="Смитлер Салон красоты"> </div>
+
+							<h3 class="h3">Маникюрный сервис</h3>
+							<ul class="carousel-services-list">
+								<li>Ключевая услуга #1 <strong>3600 <i class="fa fa-rub"></i></strong></li> <!--<i class="fa fa-rub"> - это его взял из библиотеки fantawesome - icons --->
+								<li>Ключевая услуга #2 <strong>9800 <i class="fa fa-rub"></i></strong></li>
+								<li>Ключевая услуга #3 <strong>8500 <i class="fa fa-rub"></i></strong></li>
+							</ul>
+							<a href="#" class="button button-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services-image" style="background-image: url(img/service3.png)"></div>
+				</div>
+
+				<div class="carousel-services-item">
+					<div class="carousel-services-content">
+						<div class="carousel-services-compositions">
+							<div class="carousel-logo"><img src="img/logo-2.svg" alt="Смитлер Салон красоты"> </div>
+
+							<h3 class="h3">Косметологический сервис</h3>
+							<ul class="carousel-services-list">
+								<li>Ключевая услуга #1 <strong>8500 <i class="fa fa-rub"></i></strong></li> <!--<i class="fa fa-rub"> - это его взял из библиотеки fantawesome - icons --->
+								<li>Ключевая услуга #2 <strong>8500 <i class="fa fa-rub"></i></strong></li>
+								<li>Ключевая услуга #3 <strong>8500 <i class="fa fa-rub"></i></strong></li>
+							</ul>
+							<a href="#" class="button button-white">Все услуги</a>
+						</div>
+					</div>
+					<div class="carousel-services-image" style="background-image: url(img/service.png)"></div>
+				</div>
+
+			</div>
+		</section>
 
 	</div>
 
