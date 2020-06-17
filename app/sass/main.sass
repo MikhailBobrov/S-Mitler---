@@ -142,6 +142,18 @@ section
 		background-color: darken($accent, 5%)
 		&::after
 			opacity: .32
+	&.button-white
+		background-color: #ffffff
+		color: #444
+		&::after
+			background-color: rgba(#000, .6)
+		&:hover
+			&::after
+				background-color: rgba(#000, .2)
+		&:active
+			&::after
+				background-color: rgba(#000, .4)
+
 
 //это подключено из библиотеки css-hamburgers - https://jonsuh.com/hamburgers/
 .hamburger
@@ -369,18 +381,60 @@ $colors: $blue, $red, $accent
 		transition: opacity .5s ease
 
 	&-content
-		display: flex
 		position: relative
 		padding: 60px 10% //сверху и снизу фиксировано - побокам 10% так как ширина устройств может быть разной
-	&-composition
-		margin: auto
-		text-align: center
-		width: 100%
-		.h3
-			font-weight: 800
-			font-size: 28px
-			margin-top: 5px
 
+	.h3
+		font-weight: 800
+		font-size: 28px
+		margin-top: 5px
+		margin-bottom: 20px
+		span
+			font-weight: normal
+			font-size: 18px
+			display: block
+
+	.owl-nav //стилизую навигацию - влево и вправо стрелки
+		position: absolute
+		top: 0
+		width: 100%
+		> div
+			width: 64px
+			height: 64px
+			background-color: #FFFFFF
+			color: $dark
+			position: absolute
+			text-align: center
+			line-height: 64px
+			font-size: 26px
+			&.owl-prev
+				left: 0
+			&.owl-next
+				right: 0
+
+
+
+
+.carousel-services-compositions
+	margin: auto
+	text-align: center
+	width: 100%
+
+.carousel-services-list
+	margin: 0
+	padding: 0
+	list-style-type: none
+	margin-bottom: 25px
+	li
+		padding: 9px
+		border-bottom: 1px solid rgba(#000, .12)
+		&:last-child
+			border-bottom: none
+		strong
+			font-family: firasans, sans-serif
+			color: #4a4a4a
+		.fa
+			font-size: 14px
 
 
 .owl-carousel

@@ -18,13 +18,21 @@ $(function() {
     });
 
 
-    //карусель
+    //инициализируем карусель - получаем данные о том, инициализирована она или нет. делаем это до объявления owlCarousel
+    $('.carousel-services').on('initialized.owl.carousel', function () {
+        setTimeout(function () {
+            carouselService()
+        }, 100)
+
+    })
+        //карусель
     $('.carousel-services').owlCarousel({
         loop: true, //делает бесконечную карусель
         nav: true,//next prev
         smartSpeed: 700, //speed
         navText: ['<i class="fa fa-angle-double-left"></i>','<i class="fa fa-angle-double-right"></i>'], //fontawesome - иконка используется
         responsiveClass: true,
+        dots: false,
         responsive: {
             0: { //указываем количество отображаемых элементов на малых экранах
                 items: 1
@@ -47,5 +55,22 @@ $(function() {
 
        });
     }carouselService();
+
+    //пишем функцию для последнего слова и первого - для carousel-services-item (сервис)
+    $('.carousel-services-compositions .h3').each(function () {
+        var ths = $(this);
+        ths.html(ths.html().replace(/(\S+)\s*$/,'<span>$1</span>'));
+    });
+
+    //сюда пишем все что подвергается изменению размера
+    //resize window
+    function onResize() {
+        $('.carousel-services-content').equalHeights();
+    }onResize();
+    window.onresize = function () {
+        onResize();
+    }
 });
+
+
 
