@@ -88,6 +88,9 @@ section, header
 
 section
 	background-color: #ffffff
+	&.inverse
+		color: #fff //стилизую fotorama
+		background-color: $dark
 
 .img-responsive
 	display: block
@@ -440,5 +443,9 @@ $colors: $blue, $red, $accent
 .owl-carousel
 	.owl-item //это фиксит переход - делает его плавным
 		backface-visibility: inherit
+
+///////////////fotorama - королевский салон
+
+
 
 @import "media" // Всегда в конце
